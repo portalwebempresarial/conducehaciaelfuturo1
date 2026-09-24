@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEA Conduce Hacia El Futuro - Cursos de Conducción</title>
+    <meta name="description" content="Aprende a conducir carro o moto con seguridad. Cursos de conducción, horarios flexibles y preparación para el CALE.">
+    <!-- Tailwind CSS para estilos rápidos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0a192f', // Azul oscuro de la marca
+                            red: '#cc0000',  // Rojo de la marca
+                            yellow: '#f5b800' // Amarillo de acento
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animación para el botón flotante de WhatsApp (Genera urgencia/atención) */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-green 2s infinite;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        /* Fondo con superposición para el Hero */
+        .hero-bg {
+            background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <!-- Puedes reemplazar esto con la etiqueta <img> del logo -->
+                    <h1 class="font-extrabold text-2xl tracking-tight text-brand-red uppercase">
+                        Conduce <span class="text-brand-blue text-sm block tracking-widest mt-1">Hacia el Futuro</span>
+                    </h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <span class="text-gray-600 font-medium"><i class="fas fa-phone-alt mr-2 text-brand-red"></i>315 239 0147</span>
+                    <a href="https://wa.me/573152390147?text=Hola,%20vengo%20de%20la%20p%C3%A1gina%20web.%20Quiero%20iniciar%20mi%20curso%20de%20conducci%C3%B3n." target="_blank" class="bg-brand-red hover:bg-red-800 text-white font-bold py-2 px-6 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                        Asesoría por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-center text-center">
+            <span class="text-brand-yellow font-bold tracking-wider uppercase mb-4 text-sm md:text-base border border-brand-yellow py-1 px-3 rounded-full">Centro de Enseñanza Automovilística</span>
+            <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                Aprender a conducir <br> <span class="text-brand-red">no es un juego</span>, es una responsabilidad.
+            </h2>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl">
+                Obtén tu licencia de Carro o Moto con instructores certificados, horarios flexibles y preparación integral para el CALE. <strong>¡Puedes lograrlo en solo 15 días!</strong>
+            </p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="https://wa.me/573152390147?text=Hola,%20me%20interesa%20inscribirme%20en%20un%20curso.%20%C2%BFQu%C3%A9%20promociones%20tienen?" target="_blank" class="bg-[#25d366] hover:bg-[#20b858] text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 shadow-xl flex items-center justify-center">
+                    <i class="fab fa-whatsapp text-2xl mr-3"></i> ¡Cotiza tu curso ahora!
+                </a>
+            </div>
+            <!-- Trust badges -->
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-sm font-medium text-gray-300">
+                <div class="flex flex-col items-center"><i class="fas fa-calendar-check text-2xl mb-2 text-brand-yellow"></i>Horarios Flexibles</div>
+                <div class="flex flex-col items-center"><i class="fas fa-car text-2xl mb-2 text-brand-yellow"></i>Carro y Moto</div>
+                <div class="flex flex-col items-center"><i class="fas fa-certificate text-2xl mb-2 text-brand-yellow"></i>Certificación CALE</div>
+                <div class="flex flex-col items-center"><i class="fas fa-stopwatch text-2xl mb-2 text-brand-yellow"></i>En solo 15 días</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services / Courses -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-extrabold text-brand-blue sm:text-4xl">Nuestros Cursos Disponibles</h3>
+                <p class="mt-4 text-xl text-gray-600">Categorías A1, A2, B1, C1 y C2. Te preparamos para las vías.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Tarjeta Moto -->
+                <div class="bg-gray-50 rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+                    <div class="bg-brand-blue p-6 text-center">
+                        <i class="fas fa-motorcycle text-5xl text-white mb-3"></i>
+                        <h4 class="text-2xl font-bold text-white">Cursos para Moto</h4>
+                        <p class="text-blue-200 mt-1">Categorías A1 y A2</p>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i> <span>Clases teóricas y prácticas completas.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i> <span>Desarrollo de habilidades y reflejos en la vía.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i> <span>Acompañamiento personalizado.</span></li>
+                        </ul>
+                        <a href="https://wa.me/573152390147?text=Hola,%20necesito%20informaci%C3%B3n%20sobre%20el%20curso%20de%20MOTO." target="_blank" class="block w-full text-center bg-brand-blue hover:bg-blue-900 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Consultar precio de Moto
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Carro -->
+                <div class="bg-gray-50 rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+                    <div class="bg-brand-red p-6 text-center">
+                        <i class="fas fa-car-side text-5xl text-white mb-3"></i>
+                        <h4 class="text-2xl font-bold text-white">Cursos para Carro</h4>
+                        <p class="text-red-200 mt-1">Categorías B1, C1 y C2</p>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-blue mt-1 mr-3"></i> <span>Preparación experta para evaluación CALE.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-blue mt-1 mr-3"></i> <span>Vehículos modernos y seguros.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-blue mt-1 mr-3"></i> <span>Aprende a parquear y conducir en tráfico pesado.</span></li>
+                        </ul>
+                        <a href="https://wa.me/573152390147?text=Hola,%20necesito%20informaci%C3%B3n%20sobre%20el%20curso%20de%20CARRO." target="_blank" class="block w-full text-center bg-brand-red hover:bg-red-800 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Consultar precio de Carro
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner (Generar Confianza) -->
+    <section class="bg-brand-blue text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-6">¿No dejes el curso para después!</h3>
+            <p class="text-lg mb-8 text-blue-100">Cuando tengas tiempo para aprender a manejar... ese momento puede ser <strong>ahora</strong>. Pregunta por nuestros descuentos especiales de temporada (Amor y Amistad, fin de año, etc.) y regálate algo que realmente necesitas.</p>
+            <a href="https://wa.me/573152390147?text=Hola,%20quiero%20aprovechar%20los%20descuentos%20para%20sacar%20mi%20licencia." target="_blank" class="inline-block bg-white text-brand-blue font-extrabold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition transform hover:-translate-y-1">
+                Escríbenos al WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 text-center md:text-left">
+                <h4 class="text-white text-lg font-bold">CEA Conduce Hacia El Futuro</h4>
+                <p class="mt-2 text-sm">Tu seguridad en la vía es nuestra prioridad.</p>
+            </div>
+            <div class="flex space-x-6">
+                <!-- Enlace al Instagram de la cuenta -->
+                <a href="https://www.instagram.com/conducehaciaelfuturo1/?hl=es-la" target="_blank" class="text-gray-400 hover:text-white transition">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="https://wa.me/573152390147" target="_blank" class="text-gray-400 hover:text-[#25d366] transition">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+            </div>
+        </div>
+        <div class="text-center mt-8 text-xs border-t border-gray-800 pt-6">
+            &copy; 2026 CEA Conduce Hacia El Futuro. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Botón Flotante WhatsApp para Cierre Rápido -->
+    <a href="https://wa.me/573152390147?text=Hola,%20estoy%20en%20su%20sitio%20web%20y%20quiero%20empezar%20mi%20proceso%20para%20aprender%20a%20conducir." class="whatsapp-float" target="_blank" aria-label="Escríbenos por WhatsApp">
+        <i class="fab fa-whatsapp mt-1"></i>
+    </a>
+
+</body>
+</html>
