@@ -54,12 +54,6 @@
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
-        /* Fondo con superposición para el Hero - CARGARÁ LA IMAGEN banner_principal.jpg */
-        .hero-bg {
-            background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('banner_principal.jpg');
-            background-size: cover;
-            background-position: center;
-        }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-gray-50">
@@ -83,23 +77,40 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-bg text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-center text-center">
-            <span class="text-brand-yellow font-bold tracking-wider uppercase mb-4 text-sm md:text-base border border-brand-yellow py-1 px-3 rounded-full">Centro de Enseñanza Automovilística</span>
-            <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-                Aprender a conducir <br> <span class="text-brand-red">no es un juego</span>, es una responsabilidad.
-            </h2>
-            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl">
-                Obtén tu licencia de Carro o Moto con instructores certificados, o realiza tus trámites de renovación de forma ágil y segura.
-            </p>
-            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                <a href="https://wa.me/573152390147?text=Hola,%20me%20interesa%20inscribirme%20en%20un%20curso.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n?" target="_blank" class="bg-[#25d366] hover:bg-[#20b858] text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 shadow-xl flex items-center justify-center">
-                    <i class="fab fa-whatsapp text-2xl mr-3"></i> ¡Escríbenos ahora!
-                </a>
+    <!-- Hero Section con Imagen en Recuadro -->
+    <header class="bg-brand-blue text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                
+                <!-- Columna de Texto -->
+                <div class="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <span class="text-brand-yellow font-bold tracking-wider uppercase mb-4 text-sm md:text-base border border-brand-yellow py-1 px-3 rounded-full">Centro de Enseñanza Automovilística</span>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                        Aprender a conducir <br> <span class="text-brand-red">no es un juego</span>, es una responsabilidad.
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-xl">
+                        Obtén tu licencia de Carro o Moto con instructores certificados, o realiza tus trámites de renovación de forma ágil y segura.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full justify-center lg:justify-start">
+                        <a href="https://wa.me/573152390147?text=Hola,%20me%20interesa%20inscribirme%20en%20un%20curso.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n?" target="_blank" class="bg-[#25d366] hover:bg-[#20b858] text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 shadow-xl flex items-center justify-center">
+                            <i class="fab fa-whatsapp text-2xl mr-3"></i> ¡Escríbenos ahora!
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna de Imagen en Recuadro -->
+                <div class="lg:w-1/2 w-full max-w-md mx-auto lg:max-w-none">
+                    <!-- El recuadro blanco que envuelve la imagen -->
+                    <div class="bg-white p-3 rounded-2xl shadow-2xl transform lg:-rotate-2 transition hover:rotate-0 duration-300">
+                        <!-- Aquí se carga la imagen de tu banner -->
+                        <img src="banner_principal.jpg" alt="Promoción Conduce Hacia El Futuro" class="rounded-xl w-full h-auto object-cover border border-gray-200">
+                    </div>
+                </div>
+
             </div>
+
             <!-- Trust badges -->
-            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-sm font-medium text-gray-300">
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-sm font-medium text-gray-300 border-t border-gray-700 pt-8">
                 <div class="flex flex-col items-center"><i class="fas fa-calendar-check text-2xl mb-2 text-brand-yellow"></i>Horarios Flexibles</div>
                 <div class="flex flex-col items-center"><i class="fas fa-car text-2xl mb-2 text-brand-yellow"></i>Carro y Moto</div>
                 <div class="flex flex-col items-center"><i class="fas fa-id-card text-2xl mb-2 text-brand-yellow"></i>Renovaciones</div>
@@ -205,7 +216,6 @@
                 <p class="mt-2 text-sm">Tu seguridad en la vía es nuestra prioridad.</p>
             </div>
             <div class="flex space-x-6">
-                <!-- Enlace al Instagram de la cuenta -->
                 <a href="https://www.instagram.com/conducehaciaelfuturo1/?hl=es-la" target="_blank" class="text-gray-400 hover:text-white transition">
                     <i class="fab fa-instagram text-2xl"></i>
                 </a>
