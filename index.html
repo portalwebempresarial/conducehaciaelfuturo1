@@ -3,98 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CEA Conduce Hacia El Futuro - Cursos de Conducción</title>
-    <meta name="description" content="Aprende a conducir carro o moto con seguridad. Cursos de conducción, renovación de licencias y preparación para el CALE.">
+    <title>CEA Conduce Hacia El Futuro | Plataforma Digital</title>
+    <meta name="description" content="Aprende a conducir carro o moto con seguridad. Cursos de conducción y renovación de licencias 100% digital.">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter (Tipografía tecnológica y limpia) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
                     colors: {
-                        brand: {
-                            blue: '#0a192f',
-                            red: '#cc0000',
-                            yellow: '#f5b800'
+                        tech: {
+                            dark: '#0f172a',    // Slate 900
+                            darker: '#020617',  // Slate 950
+                            card: 'rgba(30, 41, 59, 0.7)', // Slate 800 translúcido
+                            accent: '#38bdf8',  // Light Blue
+                            red: '#ef4444',     // Modern Red
+                            green: '#10b981'    // Emerald Green
                         }
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #ffffff0a 1px, transparent 1px), linear-gradient(to bottom, #ffffff0a 1px, transparent 1px)"
                     }
                 }
             }
         }
     </script>
     <style>
-        .whatsapp-float {
-            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
-            background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center;
-            font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 90; display: flex;
-            align-items: center; justify-content: center; animation: pulse-green 2s infinite; transition: transform 0.3s ease;
+        body {
+            background-color: #020617;
+            color: #e2e8f0;
         }
-        .whatsapp-float:hover { transform: scale(1.1); }
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        /* Efecto Glassmorfismo */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Botón WhatsApp Flotante Tecnológico */
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #FFF; border-radius: 50%; text-align: center;
+            font-size: 28px; box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+            z-index: 90; display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.8);
+        }
+        .whatsapp-float::after {
+            content: ''; position: absolute; width: 100%; height: 100%;
+            border-radius: 50%; border: 2px solid #10b981;
+            animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
         }
         
-        /* Estilos personalizados para los radios del Checkout */
+        /* Radios personalizados Checkout */
         .checkout-radio:checked + div {
-            border-color: #25d366;
-            background-color: #f0fdf4;
+            border-color: #10b981;
+            background-color: #f0fdfa;
         }
-        .checkout-radio:checked + div .check-icon {
-            display: block;
+        .checkout-radio:checked + div .check-icon { display: block; }
+        
+        /* Gradientes de texto */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-gray-50 relative">
+<body class="font-sans antialiased relative min-h-screen">
 
-    <!-- Navbar -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
+    <!-- Fondo de cuadrícula tecnológica -->
+    <div class="fixed inset-0 bg-grid-pattern bg-[size:40px_40px] pointer-events-none z-[-1] opacity-50"></div>
+    <!-- Brillo de fondo sutil -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-tech-accent/20 rounded-full blur-[120px] pointer-events-none z-[-1]"></div>
+
+    <!-- Navbar Glassmorfismo -->
+    <nav class="sticky top-0 z-50 glass-panel border-b-0 border-white/5 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center">
-                    <h1 class="font-extrabold text-2xl tracking-tight text-brand-red uppercase">
-                        Conduce <span class="text-brand-blue text-sm block tracking-widest mt-1">Hacia el Futuro</span>
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-tech-red to-orange-500 flex items-center justify-center shadow-lg shadow-tech-red/20">
+                        <i class="fas fa-steering-wheel text-white text-xl"></i>
+                    </div>
+                    <h1 class="font-black text-xl tracking-tight uppercase">
+                        Conduce <span class="text-transparent bg-clip-text bg-gradient-to-r from-tech-accent to-blue-500">Futuro</span>
                     </h1>
                 </div>
-                <div class="hidden md:flex items-center space-x-4">
-                    <span class="text-gray-600 font-medium"><i class="fas fa-phone-alt mr-2 text-brand-red"></i>315 239 0147</span>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="https://wa.me/573152390147" target="_blank" class="flex items-center text-sm font-semibold text-slate-300 hover:text-white transition">
+                        <i class="fab fa-whatsapp text-tech-green mr-2 text-lg"></i> Soporte
+                    </a>
+                    <button onclick="openCheckout('moto')" class="glass-panel hover:bg-white/10 text-white font-semibold py-2 px-5 rounded-lg transition border border-white/10 text-sm">
+                        Ingresar <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-brand-blue text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
+    <header class="relative overflow-hidden pt-12 pb-24 md:pt-20 md:pb-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
                 
-                <!-- Columna de Texto Modificada según instrucciones -->
+                <!-- Columna de Texto -->
                 <div class="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
-                    <span class="text-brand-yellow font-bold tracking-wider uppercase mb-4 text-sm md:text-base border border-brand-yellow py-1 px-3 rounded-full">Centro de Enseñanza Automovilística</span>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel border-tech-accent/30 text-tech-accent text-xs font-bold uppercase tracking-widest mb-6">
+                        <span class="w-2 h-2 rounded-full bg-tech-accent animate-pulse"></span>
+                        Plataforma CEA 3.0
+                    </div>
                     
-                    <!-- TEXTO AJUSTADO -->
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-                        <span class="text-brand-red">Conduce</span> Hacia El Futuro
+                    <h2 class="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-6">
+                        Acelera tu <br>
+                        <span class="text-gradient bg-gradient-to-r from-tech-red via-orange-500 to-tech-accent">Evolución</span>
                     </h2>
-                    <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-xl">
-                        Obtén tu licencia de Carro o Moto con instructores certificados, o realiza tus trámites de renovación de forma ágil y segura.
+                    <p class="text-lg text-slate-400 mb-10 max-w-xl font-light">
+                        Obtén tu licencia de conducción o realiza tus trámites de renovación a través de nuestro sistema 100% digital, rápido y seguro.
                     </p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full justify-center lg:justify-start">
-                        <!-- BOTÓN MODIFICADO PARA ABRIR FORMULARIO DE PAGO -->
-                        <button onclick="openCheckout('moto')" class="bg-[#25d366] hover:bg-[#20b858] text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 shadow-xl flex items-center justify-center">
-                            <i class="fas fa-credit-card text-2xl mr-3"></i> ¡Inicia y paga tu proceso!
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start">
+                        <button onclick="openCheckout('moto')" class="relative group overflow-hidden bg-tech-accent text-tech-darker font-bold py-4 px-8 rounded-xl transition-all shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)]">
+                            <span class="relative z-10 flex items-center justify-center">
+                                <i class="fas fa-bolt mr-2"></i> Iniciar Proceso
+                            </span>
+                            <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-out"></div>
                         </button>
+                    </div>
+
+                    <!-- Estadísticas / Trust (Estilo Tech) -->
+                    <div class="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-8 w-full max-w-lg">
+                        <div>
+                            <p class="text-2xl font-black text-white">15<span class="text-tech-accent">D</span></p>
+                            <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Tiempo Promedio</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-white">100<span class="text-tech-green">%</span></p>
+                            <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Aprobación CALE</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-white">24<span class="text-tech-red">/</span>7</p>
+                            <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Plataforma</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Columna de IG en Recuadro -->
+                <!-- Columna de Video IG (Integrado en UI Tech) -->
                 <div class="lg:w-1/2 w-full max-w-md mx-auto lg:max-w-none">
-                    <div class="bg-white p-3 rounded-2xl shadow-2xl transform lg:-rotate-2 transition hover:rotate-0 duration-300">
-                        <iframe src="https://www.instagram.com/p/DJnbKu8tIeV/embed" width="100%" height="550" frameborder="0" scrolling="no" allowtransparency="true" class="rounded-xl w-full border border-gray-200 bg-white"></iframe>
+                    <div class="relative rounded-2xl p-1 bg-gradient-to-b from-white/20 to-white/5 shadow-2xl">
+                        <!-- Botones estilo macOS para dar toque de ventana de software -->
+                        <div class="absolute top-4 left-4 flex gap-2 z-10">
+                            <div class="w-3 h-3 rounded-full bg-tech-red"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-tech-green"></div>
+                        </div>
+                        <div class="glass-panel rounded-xl overflow-hidden pt-10 px-2 pb-2">
+                            <!-- Iframe de Instagram -->
+                            <iframe src="https://www.instagram.com/p/DJnbKu8tIeV/embed" width="100%" height="520" frameborder="0" scrolling="no" allowtransparency="true" class="w-full rounded-lg bg-white"></iframe>
+                        </div>
                     </div>
                 </div>
 
@@ -102,196 +179,178 @@
         </div>
     </header>
 
-    <!-- Sección de Renovación y Examen Médico -->
-    <section class="py-16 bg-gray-100 border-b border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h3 class="text-3xl font-extrabold text-brand-blue mb-4">Renovación y Recategorización</h3>
-            <p class="text-xl text-gray-600 mb-8">Realiza tu trámite sin complicaciones. El primer paso es tu evaluación médica.</p>
-            
-            <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 inline-block text-left w-full max-w-lg transition-transform duration-300 hover:-translate-y-1">
-                <div class="flex items-center justify-between border-b border-gray-100 pb-4 mb-4">
-                    <div class="flex items-center">
-                        <i class="fas fa-stethoscope text-3xl text-brand-red mr-4"></i>
-                        <span class="text-xl font-bold text-gray-800">Examen Médico</span>
-                    </div>
-                    <span class="text-3xl font-extrabold text-brand-blue">$250.000</span>
-                </div>
-                <p class="text-gray-600 mb-6">Valor del examen médico obligatorio para los procesos de renovación o recategorización de tu licencia de conducción.</p>
-                
-                <!-- BOTÓN MODIFICADO PARA ABRIR FORMULARIO -->
-                <button onclick="openCheckout('renovacion')" class="block w-full text-center bg-brand-red hover:bg-red-800 text-white font-bold py-4 px-4 rounded-lg transition duration-300 shadow-md">
-                    Pagar Examen y Agendar
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services / Courses -->
-    <section class="py-20 bg-white">
+    <!-- Sección de Trámites Rápidos (Bento Grid) -->
+    <section class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h3 class="text-3xl font-extrabold text-brand-blue sm:text-4xl">Nuestros Cursos Disponibles</h3>
-                <p class="mt-4 text-xl text-gray-600">Categorías A1, A2, B1, C1 y C2. Te preparamos para las vías.</p>
+            <div class="mb-12">
+                <h3 class="text-3xl font-bold mb-2">Ecosistema de <span class="text-tech-accent">Servicios</span></h3>
+                <p class="text-slate-400">Selecciona el módulo requerido y completa tu gestión en minutos.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
                 <!-- Tarjeta Moto -->
-                <div class="bg-gray-50 rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-                    <div class="bg-brand-blue p-6 text-center">
-                        <i class="fas fa-motorcycle text-5xl text-white mb-3"></i>
-                        <h4 class="text-2xl font-bold text-white">Cursos para Moto</h4>
-                        <p class="text-blue-200 mt-1">Categorías A1 y A2</p>
+                <div class="glass-panel rounded-2xl p-8 hover:bg-white/5 transition-all border border-white/10 hover:border-tech-accent/50 group cursor-pointer relative overflow-hidden" onclick="openCheckout('moto')">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-tech-accent/10 rounded-bl-full -z-10 group-hover:bg-tech-accent/20 transition-colors"></div>
+                    <div class="w-14 h-14 rounded-xl bg-tech-darker border border-white/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-motorcycle text-2xl text-tech-accent"></i>
                     </div>
-                    <div class="p-8">
-                        <ul class="space-y-4 mb-8 text-gray-700">
-                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i> <span>Clases teóricas y prácticas completas.</span></li>
-                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-red mt-1 mr-3"></i> <span>Desarrollo de habilidades y reflejos en la vía.</span></li>
-                        </ul>
-                        <!-- BOTÓN MODIFICADO PARA ABRIR FORMULARIO -->
-                        <button onclick="openCheckout('moto')" class="block w-full text-center bg-brand-blue hover:bg-blue-900 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
-                            Matricular Curso de Moto
-                        </button>
+                    <h4 class="text-xl font-bold text-white mb-2">Licencia Moto</h4>
+                    <p class="text-slate-400 text-sm mb-6">Categorías A1 y A2. Incluye clases teóricas, prácticas y simulador.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xs font-mono text-tech-accent bg-tech-accent/10 px-2 py-1 rounded">Módulo 01</span>
+                        <i class="fas fa-arrow-right text-slate-500 group-hover:text-tech-accent transition-transform group-hover:translate-x-2"></i>
                     </div>
                 </div>
 
                 <!-- Tarjeta Carro -->
-                <div class="bg-gray-50 rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-                    <div class="bg-brand-red p-6 text-center">
-                        <i class="fas fa-car-side text-5xl text-white mb-3"></i>
-                        <h4 class="text-2xl font-bold text-white">Cursos para Carro</h4>
-                        <p class="text-red-200 mt-1">Categorías B1, C1 y C2</p>
+                <div class="glass-panel rounded-2xl p-8 hover:bg-white/5 transition-all border border-white/10 hover:border-tech-red/50 group cursor-pointer relative overflow-hidden" onclick="openCheckout('carro')">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-tech-red/10 rounded-bl-full -z-10 group-hover:bg-tech-red/20 transition-colors"></div>
+                    <div class="w-14 h-14 rounded-xl bg-tech-darker border border-white/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-car-side text-2xl text-tech-red"></i>
                     </div>
-                    <div class="p-8">
-                        <ul class="space-y-4 mb-8 text-gray-700">
-                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-blue mt-1 mr-3"></i> <span>Preparación experta para evaluación CALE.</span></li>
-                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-blue mt-1 mr-3"></i> <span>Vehículos modernos y seguros.</span></li>
-                        </ul>
-                        <!-- BOTÓN MODIFICADO PARA ABRIR FORMULARIO -->
-                        <button onclick="openCheckout('carro')" class="block w-full text-center bg-brand-red hover:bg-red-800 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
-                            Matricular Curso de Carro
-                        </button>
+                    <h4 class="text-xl font-bold text-white mb-2">Licencia Carro</h4>
+                    <p class="text-slate-400 text-sm mb-6">Categorías B1, C1 y C2. Preparación avanzada para tráfico pesado.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xs font-mono text-tech-red bg-tech-red/10 px-2 py-1 rounded">Módulo 02</span>
+                        <i class="fas fa-arrow-right text-slate-500 group-hover:text-tech-red transition-transform group-hover:translate-x-2"></i>
                     </div>
                 </div>
+
+                <!-- Tarjeta Examen / Renovación -->
+                <div class="glass-panel rounded-2xl p-8 hover:bg-white/5 transition-all border border-white/10 hover:border-tech-green/50 group cursor-pointer relative overflow-hidden" onclick="openCheckout('renovacion')">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-tech-green/10 rounded-bl-full -z-10 group-hover:bg-tech-green/20 transition-colors"></div>
+                    <div class="w-14 h-14 rounded-xl bg-tech-darker border border-white/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-id-card-clip text-2xl text-tech-green"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Renovación</h4>
+                    <p class="text-slate-400 text-sm mb-6">Examen médico obligatorio para renovar o recategorizar ($250.000).</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xs font-mono text-tech-green bg-tech-green/10 px-2 py-1 rounded">Express</span>
+                        <i class="fas fa-arrow-right text-slate-500 group-hover:text-tech-green transition-transform group-hover:translate-x-2"></i>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- MODAL DE CHECKOUT (Estilo Feedtap.online) -->
-    <div id="checkoutModal" class="fixed inset-0 bg-black bg-opacity-70 z-[100] hidden flex justify-center items-end sm:items-center">
-        <!-- Contenedor blanco del formulario -->
-        <div class="bg-white w-full max-w-md sm:rounded-2xl rounded-t-2xl max-h-[90vh] overflow-y-auto relative animate-[slideUp_0.3s_ease-out]">
+    <!-- Footer Tecnológico -->
+    <footer class="border-t border-white/10 bg-tech-darker py-8 mt-10">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2 opacity-70">
+                <i class="fas fa-shield-check text-tech-green"></i>
+                <span class="text-sm font-mono">Sistema encriptado y seguro v3.2.0</span>
+            </div>
+            <div class="text-center md:text-right opacity-50 text-xs">
+                &copy; 2026 CEA Conduce Hacia El Futuro. Desarrollado para el rendimiento.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE CHECKOUT (Mantenemos el diseño limpio y claro para conversión, pero con toques UI modernos) -->
+    <div id="checkoutModal" class="fixed inset-0 bg-tech-darker/90 backdrop-blur-sm z-[100] hidden flex justify-center items-end sm:items-center">
+        <!-- Contenedor del formulario -->
+        <div class="bg-white text-gray-900 w-full max-w-md sm:rounded-2xl rounded-t-2xl max-h-[90vh] overflow-y-auto relative animate-[slideUp_0.3s_ease-out] shadow-2xl">
             
             <!-- Encabezado Modal -->
-            <div class="sticky top-0 bg-gray-50 border-b border-gray-200 px-4 py-3 flex justify-between items-center z-10">
-                <h3 class="font-bold text-gray-800 text-center w-full uppercase tracking-wide">Completa tu matrícula</h3>
-                <button onclick="closeCheckout()" class="absolute right-4 text-gray-500 hover:text-gray-800 p-2">
-                    <i class="fas fa-times text-xl"></i>
+            <div class="sticky top-0 bg-white/90 backdrop-blur border-b border-gray-100 px-5 py-4 flex justify-between items-center z-10">
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-tech-green animate-pulse"></div>
+                    <h3 class="font-black text-gray-900 uppercase tracking-tight">Checkout Seguro</h3>
+                </div>
+                <button onclick="closeCheckout()" class="text-gray-400 hover:text-tech-red transition bg-gray-100 hover:bg-red-50 rounded-full w-8 h-8 flex items-center justify-center">
+                    <i class="fas fa-times"></i>
                 </button>
             </div>
 
-            <div class="p-5">
-                <p class="text-sm text-gray-600 mb-4 text-center">Elige tu servicio y completa tus datos para generar el pago.</p>
+            <div class="p-6">
+                <p class="text-sm text-gray-500 mb-5">Configura tu solicitud y accede a la pasarela de pagos.</p>
 
                 <!-- Opciones de Producto -->
                 <div class="space-y-3 mb-6">
                     
-                    <!-- Opción: Moto -->
                     <label class="block relative cursor-pointer group">
                         <input type="radio" name="producto" value="500000" id="radio-moto" class="checkout-radio sr-only" onchange="actualizarTotal('Curso Moto (A1/A2)')">
-                        <div class="border-2 border-gray-200 rounded-xl p-4 group-hover:border-green-300 transition-colors">
+                        <div class="border border-gray-200 rounded-xl p-4 transition-all">
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <span class="bg-purple-100 text-purple-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wide">Pago Inicial</span>
-                                    <h4 class="font-bold text-gray-800 mt-1">Curso de Moto (A1, A2)</h4>
+                                    <span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wide">Matrícula Inicial</span>
+                                    <h4 class="font-bold text-gray-900 mt-1">Curso Moto (A1, A2)</h4>
                                 </div>
-                                <i class="fas fa-check-circle text-green-500 text-xl hidden check-icon"></i>
+                                <i class="fas fa-check-circle text-tech-green text-xl hidden check-icon shadow-sm rounded-full"></i>
                             </div>
-                            <p class="font-extrabold text-gray-900 mt-2 text-lg">$500.000</p>
+                            <p class="font-black text-tech-darker mt-2 text-lg">$500.000</p>
                         </div>
                     </label>
 
-                    <!-- Opción: Carro -->
                     <label class="block relative cursor-pointer group">
                         <input type="radio" name="producto" value="500000" id="radio-carro" class="checkout-radio sr-only" onchange="actualizarTotal('Curso Carro (B1/C1/C2)')">
-                        <div class="border-2 border-gray-200 rounded-xl p-4 group-hover:border-green-300 transition-colors">
+                        <div class="border border-gray-200 rounded-xl p-4 transition-all">
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <span class="bg-purple-100 text-purple-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wide">Pago Inicial</span>
-                                    <h4 class="font-bold text-gray-800 mt-1">Curso de Carro (B1, C1, C2)</h4>
+                                    <span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wide">Matrícula Inicial</span>
+                                    <h4 class="font-bold text-gray-900 mt-1">Curso Carro (B1, C1, C2)</h4>
                                 </div>
-                                <i class="fas fa-check-circle text-green-500 text-xl hidden check-icon"></i>
+                                <i class="fas fa-check-circle text-tech-green text-xl hidden check-icon shadow-sm rounded-full"></i>
                             </div>
-                            <p class="font-extrabold text-gray-900 mt-2 text-lg">$500.000</p>
+                            <p class="font-black text-tech-darker mt-2 text-lg">$500.000</p>
                         </div>
                     </label>
 
-                    <!-- Opción: Renovación -->
                     <label class="block relative cursor-pointer group">
                         <input type="radio" name="producto" value="250000" id="radio-renovacion" class="checkout-radio sr-only" onchange="actualizarTotal('Renovación Examen Médico')">
-                        <div class="border-2 border-gray-200 rounded-xl p-4 group-hover:border-green-300 transition-colors">
+                        <div class="border border-gray-200 rounded-xl p-4 transition-all">
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wide">Pago Total</span>
-                                    <h4 class="font-bold text-gray-800 mt-1">Examen Médico Renovación</h4>
+                                    <span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wide">Pago Total</span>
+                                    <h4 class="font-bold text-gray-900 mt-1">Examen Médico (Renovación)</h4>
                                 </div>
-                                <i class="fas fa-check-circle text-green-500 text-xl hidden check-icon"></i>
+                                <i class="fas fa-check-circle text-tech-green text-xl hidden check-icon shadow-sm rounded-full"></i>
                             </div>
-                            <p class="font-extrabold text-gray-900 mt-2 text-lg">$250.000</p>
+                            <p class="font-black text-tech-darker mt-2 text-lg">$250.000</p>
                         </div>
                     </label>
 
                 </div>
 
-                <!-- Formulario de Datos -->
-                <div class="space-y-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
-                    <div>
-                        <label class="block text-xs font-bold text-gray-700 mb-1">Celular *</label>
-                        <div class="relative">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="fab fa-whatsapp text-gray-400"></i>
-                            </div>
-                            <input type="tel" id="user-phone" class="pl-10 w-full border border-gray-300 rounded-lg py-2.5 px-3 text-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500" placeholder="Número con WhatsApp">
-                        </div>
+                <!-- Formulario de Datos UI Moderna -->
+                <div class="space-y-4">
+                    <div class="relative">
+                        <input type="tel" id="user-phone" class="peer w-full border-b-2 border-gray-200 bg-transparent py-2.5 px-1 text-sm focus:outline-none focus:border-tech-green placeholder-transparent" placeholder="Celular" required>
+                        <label class="absolute left-1 -top-3.5 text-xs text-gray-500 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2.5 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-tech-green font-semibold">Número de WhatsApp *</label>
                     </div>
-                    <div>
-                        <label class="block text-xs font-bold text-gray-700 mb-1">Nombre *</label>
-                        <div class="relative">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="far fa-user text-gray-400"></i>
-                            </div>
-                            <input type="text" id="user-name" class="pl-10 w-full border border-gray-300 rounded-lg py-2.5 px-3 text-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500" placeholder="Ingresa tu nombre">
-                        </div>
+                    <div class="relative mt-6">
+                        <input type="text" id="user-name" class="peer w-full border-b-2 border-gray-200 bg-transparent py-2.5 px-1 text-sm focus:outline-none focus:border-tech-green placeholder-transparent" placeholder="Nombre" required>
+                        <label class="absolute left-1 -top-3.5 text-xs text-gray-500 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2.5 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-tech-green font-semibold">Nombre *</label>
                     </div>
-                    <div>
-                        <label class="block text-xs font-bold text-gray-700 mb-1">Apellido *</label>
-                        <div class="relative">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="far fa-user text-gray-400"></i>
-                            </div>
-                            <input type="text" id="user-lastname" class="pl-10 w-full border border-gray-300 rounded-lg py-2.5 px-3 text-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500" placeholder="Ingresa tu apellido">
-                        </div>
+                    <div class="relative mt-6">
+                        <input type="text" id="user-lastname" class="peer w-full border-b-2 border-gray-200 bg-transparent py-2.5 px-1 text-sm focus:outline-none focus:border-tech-green placeholder-transparent" placeholder="Apellido" required>
+                        <label class="absolute left-1 -top-3.5 text-xs text-gray-500 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2.5 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-tech-green font-semibold">Apellido *</label>
                     </div>
                 </div>
 
                 <!-- Resumen y Botón de Pago -->
-                <div class="mt-6 border-t border-gray-200 pt-5 pb-4">
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-gray-600 font-medium text-sm">Total a pagar:</span>
-                        <span id="checkout-total-price" class="text-2xl font-black text-brand-blue">$0</span>
+                <div class="mt-8">
+                    <div class="flex justify-between items-end mb-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <span class="text-gray-500 font-semibold text-xs uppercase tracking-wider">Total a pagar</span>
+                        <span id="checkout-total-price" class="text-3xl font-black text-gray-900">$0</span>
                     </div>
                     
-                    <button onclick="procesarPago()" class="w-full bg-[#25d366] hover:bg-[#20b858] text-white font-extrabold py-3.5 rounded-xl text-lg transition duration-300 shadow-lg shadow-green-200 flex items-center justify-center">
-                        <i class="fas fa-lock mr-2"></i> IR A PAGAR
+                    <button onclick="procesarPago()" class="w-full bg-gray-900 hover:bg-black text-white font-bold py-4 rounded-xl text-lg transition duration-300 shadow-lg shadow-gray-900/20 flex items-center justify-center gap-2">
+                        <i class="fas fa-fingerprint"></i> Procesar Pago
                     </button>
-                    <p class="text-[11px] text-center text-gray-400 mt-3 leading-tight">Serás redirigido a la pasarela de pago segura. Una vez completado, nos pondremos en contacto contigo.</p>
+                    <div class="flex items-center justify-center gap-2 mt-4 text-gray-400 text-xs">
+                        <i class="fas fa-lock"></i> <span>Transacción encriptada de extremo a extremo</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Botón Flotante WhatsApp para preguntas generales -->
-    <a href="https://wa.me/573152390147?text=Hola,%20tengo%20una%20duda%20sobre%20los%20servicios." class="whatsapp-float" target="_blank" aria-label="Escríbenos por WhatsApp">
-        <i class="fab fa-whatsapp mt-1"></i>
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/573152390147?text=Hola,%20tengo%20una%20duda%20sobre%20la%20plataforma." class="whatsapp-float" target="_blank" aria-label="Soporte WhatsApp">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Lógica del Checkout -->
@@ -300,16 +359,11 @@
 
         function openCheckout(tipo) {
             document.getElementById('checkoutModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Evita el scroll del fondo
+            document.body.style.overflow = 'hidden';
             
-            // Selecciona automáticamente la opción según el botón presionado
-            if(tipo === 'moto') {
-                document.getElementById('radio-moto').click();
-            } else if(tipo === 'carro') {
-                document.getElementById('radio-carro').click();
-            } else if(tipo === 'renovacion') {
-                document.getElementById('radio-renovacion').click();
-            }
+            if(tipo === 'moto') document.getElementById('radio-moto').click();
+            else if(tipo === 'carro') document.getElementById('radio-carro').click();
+            else if(tipo === 'renovacion') document.getElementById('radio-renovacion').click();
         }
 
         function closeCheckout() {
@@ -322,7 +376,6 @@
             const opciones = document.getElementsByName('producto');
             for(let op of opciones) {
                 if(op.checked) {
-                    // Formatear precio
                     let precioFormateado = '$' + parseInt(op.value).toLocaleString('es-CO');
                     document.getElementById('checkout-total-price').innerText = precioFormateado;
                 }
@@ -335,20 +388,17 @@
             const apellido = document.getElementById('user-lastname').value;
 
             if(!productoSeleccionado || !telefono || !nombre || !apellido) {
-                alert("Por favor, selecciona un servicio y completa todos tus datos.");
+                alert("Por favor, selecciona un servicio y completa tus datos personales.");
                 return;
             }
 
-            // === AQUI DEBES PONER TU LINK DE PASARELA DE PAGO (Wompi, ePayco, MercadoPago, etc) ===
-            // Actualmente simula enviar los datos armados al WhatsApp para que vean la orden y paguen,
-            // pero puedes reemplazar la URL por tu link de pagos directo.
-            
+            // === AQUI DEBES PONER TU LINK DE PASARELA DE PAGO ===
             let urlPasarelaDePago = "https://wa.me/573152390147?text=" + encodeURIComponent(
-                "¡Hola! He llenado mis datos para realizar el pago.\n\n" +
+                "¡Hola! He completado el registro en la plataforma.\n\n" +
                 "👤 Nombre: " + nombre + " " + apellido + "\n" +
                 "📱 Celular: " + telefono + "\n" +
-                "🚗 Servicio: " + productoSeleccionado + "\n\n" +
-                "Por favor, indícame el link o QR para realizar el pago y enviarles el comprobante."
+                "💳 Servicio: " + productoSeleccionado + "\n\n" +
+                "Solicito el link de pago o código QR para finalizar la transacción."
             );
             
             window.open(urlPasarelaDePago, '_blank');
